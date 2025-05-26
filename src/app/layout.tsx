@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ReduxStoreProvider } from "@/lib/ReduxStoreProvider";
 
 export const metadata: Metadata = {
   title: "Mpost Back Office Portal",
@@ -13,7 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <ReduxStoreProvider>{children}</ReduxStoreProvider>
+      </body>
     </html>
   );
 }
