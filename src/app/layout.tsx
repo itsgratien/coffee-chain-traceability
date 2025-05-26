@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { ReduxStoreProvider } from '@/lib/ReduxStoreProvider';
+import { AntdRegistry } from '@ant-design/nextjs-registry';
 
 export const metadata: Metadata = {
   title: 'Mpost Back Office Portal',
@@ -15,7 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ReduxStoreProvider>{children}</ReduxStoreProvider>
+        <ReduxStoreProvider>
+          <AntdRegistry>{children}</AntdRegistry>
+        </ReduxStoreProvider>
       </body>
     </html>
   );
