@@ -1,5 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
 
 interface Me {
   person: { id: string; email: string; phone_number?: string };
@@ -18,7 +18,7 @@ const accountSlice = createSlice({
       me: action.payload,
     }),
   },
-  name: "accountSlice",
+  name: 'accountSlice',
 });
 
 export const accountReducer = accountSlice.reducer;

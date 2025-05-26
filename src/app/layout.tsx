@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import { ReduxStoreProvider } from "@/lib/ReduxStoreProvider";
+import type { Metadata } from 'next';
+import './globals.css';
+import { ReduxStoreProvider } from '@/lib/ReduxStoreProvider';
 
 export const metadata: Metadata = {
-  title: "Mpost Back Office Portal",
-  description: "Staff Management Portal for Mpost",
+  title: 'Mpost Back Office Portal',
+  description: 'Staff Management Portal for Mpost',
 };
 
 export default function RootLayout({
