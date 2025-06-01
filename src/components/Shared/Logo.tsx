@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export const Logo = () => {
   return (
-    <div className="w-[100px]">
+    <div className="w-[150px]">
       <Image
         src={'/logo.svg'}
         width={100}

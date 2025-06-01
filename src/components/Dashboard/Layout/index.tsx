@@ -18,7 +18,7 @@ export const Layout = ({ children }: Props) => {
       >
         <div className={cn('relative flex items-center w-full')}>
           <Logo />
-          <div className={cn('ml-[240px] grid grid-cols-[1fr_1fr] w-[95%]')}>
+          <div className={cn('ml-[205px] grid grid-cols-[1fr_1fr] w-[95%]')}>
             <div>
               <h1 className="text-[#2B3674] text-[30px] font-bold">
                 Main Dashboard
@@ -31,7 +31,7 @@ export const Layout = ({ children }: Props) => {
           className={cn(
             'relative bg-white-blue',
             'border border-[#E7EDFF]',
-            '2xl:mt-[50px] xl:mt-[30px] lg:mt-[30px] mt-0',
+            '2xl:mt-[20px] xl:mt-[20px] lg:mt-[20px] mt-0',
             'w-[300px] h-[80vh]',
             'rounded-[10px]',
           )}
@@ -50,7 +50,7 @@ export const Layout = ({ children }: Props) => {
           </div>
         </div>
       </header>
-      <main className="relative py-[150px] ml-[380px] pl-[30px]">
+      <main className="relative 2xl:my-[160px] my-[150px] ml-[380px] pl-[30px] pr-[80px] bg-transparent z-50">
         {children}
       </main>
     </>

@@ -1,3 +1,4 @@
+import { Home } from '@/components/Dashboard/Home';
 export default function Dashboard() {
-  return <h1>welcome</h1>;
+  return <Home />;
 }

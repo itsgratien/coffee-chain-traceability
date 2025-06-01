@@ -8,7 +8,11 @@ import { LanguageSelector } from '@/components/Shared/LanguageSelector';
 
 export const TopRightMenu = () => {
   return (
-    <div className={cn('relative flex justify-end items-center')}>
+    <div
+      className={cn(
+        'relative flex justify-end items-center bg-white h-[65px] rounded-[50px]',
+      )}
+    >
       <ul className={cn('flex items-center', styles.topMenu)}>
         <li>
           <Search />
