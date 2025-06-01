@@ -4,7 +4,7 @@ import cn from 'classnames';
 import styles from './Styles.module.scss';
 import { Menu } from 'antd';
 import type { MenuProps } from 'antd';
-import { Icon } from '@iconify/react';
+import { Icon } from './Icon';
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -12,23 +12,12 @@ const items: MenuItem[] = [
   {
     label: 'Dashboard',
     key: 'dashboard',
-    icon: <Icon icon={'gravity-ui:circles-4-square'} fontSize={25} />,
-    className: 'bg-transparent',
+    icon: <Icon icon={'radix-icons:dashboard'} />,
   },
   {
     label: 'Settings',
     key: 'SubMenu',
-    icon: <Icon icon={'hugeicons:file-euro'} fontSize={25} />,
-    children: [
-      {
-        type: 'group',
-        label: 'Item 1',
-      },
-      {
-        type: 'group',
-        label: 'Item 2',
-      },
-    ],
+    icon: <Icon icon={'hugeicons:file-euro'} />,
   },
 ];
 
@@ -40,9 +29,8 @@ export const SidebarMenu = () => {
         onClick={onClick}
         mode="vertical"
         items={items}
-        className="bg-transparent"
+        className={cn('bg-transparent', styles.menu)}
       />
-      ;
     </div>
   );
 };

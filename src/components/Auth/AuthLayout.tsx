@@ -2,16 +2,12 @@
 import React from 'react';
 import cn from 'classnames';
 import styles from './Styles.module.scss';
-import { Icon } from '@iconify/react';
-import { Dropdown, Space } from 'antd';
-import type { MenuProps } from 'antd';
 import { Logo } from '@/components/Shared/Logo';
+import { LanguageSelector } from '@/components/Shared/LanguageSelector';
 
 type Props = {
   children: React.ReactNode;
 };
-
-const languageItems: MenuProps['items'] = [{ key: '1', label: 'English' }];
 
 export const AuthLayout = ({ children }: Props) => {
   return (
@@ -27,13 +23,7 @@ export const AuthLayout = ({ children }: Props) => {
               'cursor-pointer',
             )}
           >
-            <Dropdown menu={{ items: languageItems }} trigger={['click']}>
-              <Space>
-                <Icon icon={'pepicons-pop:internet'} fontSize={30} />
-                English
-                <Icon icon={'cuida:caret-down-outline'} fontSize={20} />
-              </Space>
-            </Dropdown>
+            <LanguageSelector />
           </div>
         </div>
       </header>

@@ -1,10 +1,10 @@
 'use client';
 import React from 'react';
 import cn from 'classnames';
-import styles from './Styles.module.scss';
 import { Logo } from '@/components/Shared/Logo';
 import { Profile } from './Profile';
 import { SidebarMenu } from './SidebarMenu';
+import { TopRightMenu } from './TopRightMenu';
 
 type Props = {
   children: React.ReactNode;
@@ -13,9 +13,19 @@ type Props = {
 export const Layout = ({ children }: Props) => {
   return (
     <>
-      <header className={cn('fixed top-0 left-0 right-0', 'px-[80px]')}>
-        <div className={cn('relative')}>
+      <header
+        className={cn('fixed top-0 left-0 right-0 w-full z-50', 'px-[80px]')}
+      >
+        <div className={cn('relative flex items-center w-full')}>
           <Logo />
+          <div className={cn('ml-[240px] grid grid-cols-[1fr_1fr] w-[95%]')}>
+            <div>
+              <h1 className="text-[#2B3674] text-[30px] font-bold">
+                Main Dashboard
+              </h1>
+            </div>
+            <TopRightMenu />
+          </div>
         </div>
         <div
           className={cn(
@@ -24,7 +34,6 @@ export const Layout = ({ children }: Props) => {
             '2xl:mt-[50px] xl:mt-[30px] lg:mt-[30px] mt-0',
             'w-[300px] h-[80vh]',
             'rounded-[10px]',
-            styles.sidebar,
           )}
         >
           <Profile />
@@ -41,7 +50,7 @@ export const Layout = ({ children }: Props) => {
           </div>
         </div>
       </header>
-      <main className="relative py-[150px] ml-[380px] pl-[20px]">
+      <main className="relative py-[150px] ml-[380px] pl-[30px]">
         {children}
       </main>
     </>
