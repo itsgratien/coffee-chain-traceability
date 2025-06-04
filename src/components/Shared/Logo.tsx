@@ -4,11 +4,11 @@ import Image from 'next/image';
 
 export const Logo = () => {
   return (
-    <div className="w-[150px]">
+    <div className="w-[200px]">
       <Image
-        src={'/logo.svg'}
-        width={100}
-        height={100}
+        src={'/assets/logo.png'}
+        width={200}
+        height={200}
         alt="logo"
         unoptimized
         className="max-w-full w-full h-auto"

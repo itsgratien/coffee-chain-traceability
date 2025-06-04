@@ -8,8 +8,8 @@ import { AntdProvider } from '@/lib/AntdProvider';
 import { Poppins } from 'next/font/google';
 
 export const metadata: Metadata = {
-  title: 'Mpost Back Office Portal',
-  description: 'Staff Management Portal for Mpost',
+  title: 'Coffee Chain Supply',
+  description: 'Coffee Chain Supply Management',
 };
 
 const poppins = Poppins({
