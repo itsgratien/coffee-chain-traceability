@@ -1,10 +1,14 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
+import cn from 'classnames';
 
-export const Logo = () => {
+type Props = {
+  width?: string;
+};
+export const Logo = ({ width }: Props) => {
   return (
-    <div className="w-[200px]">
+    <div style={{ width: width ?? '200px' }}>
       <Image
         src={'/assets/logo.png'}
         width={200}

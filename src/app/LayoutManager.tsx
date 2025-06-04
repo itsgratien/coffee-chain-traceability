@@ -9,7 +9,7 @@ export const LayoutManager = ({ children }: Props) => {
   const pathname = usePathname();
 
   if (pathname !== '/') {
-    return <body className="bg-[#FCFDFF]">{children}</body>;
+    return <body className="bg-white-blue">{children}</body>;
   }
 
   return (

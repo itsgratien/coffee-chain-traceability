@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -13,6 +13,8 @@
   "dependencies": {
     "@ant-design/nextjs-registry": "^1.0.2",
     "@ant-design/v5-patch-for-react-19": "^1.0.3",
+    "@prisma/client": "^6.9.0",
+    "@prisma/extension-accelerate": "^2.0.1",
     "@reduxjs/toolkit": "^2.8.2",
     "antd": "^5.25.2",
     "dotenv": "^16.5.0",
@@ -20,16 +22,11 @@
     "http-status-codes": "^2.3.0",
     "jsonwebtoken": "^9.0.2",
     "next": "15.3.2",
-    "pg": "^8.16.0",
-    "pg-hstore": "^2.3.4",
+    "next-connect": "^1.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-redux": "^9.2.0",
-    "reflect-metadata": "^0.2.2",
     "sass": "^1.89.0",
-    "sequelize": "^6.37.7",
-    "sequelize-typescript": "^2.1.6",
-    "swiper": "^11.2.8",
     "yup": "^1.6.1"
   },
   "devDependencies": {
@@ -47,7 +44,9 @@
     "husky": "^9.1.7",
     "postcss": "^8.5.3",
     "prettier": "3.5.3",
+    "prisma": "^6.9.0",
     "tailwindcss": "^4.1.7",
+    "tsx": "^4.19.4",
     "typescript": "^5"
   }
 }
