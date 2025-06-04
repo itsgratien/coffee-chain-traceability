@@ -1,0 +1,14 @@
+{
+  "name": "coffee-supply-chain",
+  "version": "1.0.0",
+  "description": "Coffee Supply Chain Smart Contract",
+  "scripts": {
+    "test": "hardhat test",
+    "compile": "hardhat compile"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@openzeppelin/test-helpers": "^0.5.16",
+    "hardhat": "^2.19.1"
+  }
+}
