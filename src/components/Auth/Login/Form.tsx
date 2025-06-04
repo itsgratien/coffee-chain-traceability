@@ -7,6 +7,7 @@ import styles from './Styles.module.scss';
 import Link from 'next/link';
 import { object, string } from 'yup';
 import { InputError } from '@/components/Shared/Error/InputError';
+import { useRouter } from 'next/navigation';
 
 const schema = object().shape({
   email: string().required().email(),
@@ -14,10 +15,13 @@ const schema = object().shape({
 });
 
 export const LoginForm = () => {
+  const router = useRouter();
   const formik = useFormik({
     initialValues: { email: '', password: '' },
     validationSchema: schema,
-    onSubmit: () => {},
+    onSubmit: () => {
+      router.push('/dashboard');
+    },
   });
 
   const { values, handleChange, handleSubmit, errors } = formik;
