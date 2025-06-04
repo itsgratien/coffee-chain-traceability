@@ -3,6 +3,7 @@ import React from 'react';
 import cn from 'classnames';
 import { CustomSelect } from './CustomSelect';
 import { Statistic } from './Statistic';
+import { Chart } from './Chart';
 
 export const Home = () => {
   return (
@@ -16,6 +17,7 @@ export const Home = () => {
             <CustomSelect
               options={[{ label: 'Today', value: 'today' }]}
               value={'today'}
+              size="middle"
             />
           </div>
         </div>
@@ -23,7 +25,9 @@ export const Home = () => {
           <Statistic />
         </div>
       </section>
-      <section className={cn('relative my-[20px]')}></section>
+      <section className={cn('relative my-[30px]')}>
+        <Chart />
+      </section>
     </>
   );
 };

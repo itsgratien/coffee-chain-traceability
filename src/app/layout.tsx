@@ -1,5 +1,6 @@
 import '@ant-design/v5-patch-for-react-19';
 import './globals.css';
+import 'swiper/css';
 import type { Metadata } from 'next';
 import { ReduxStoreProvider } from '@/lib/ReduxStoreProvider';
 import { LayoutManager } from './LayoutManager';

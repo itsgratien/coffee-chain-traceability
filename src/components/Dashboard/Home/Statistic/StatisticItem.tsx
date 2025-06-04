@@ -21,6 +21,7 @@ export const StatisticItem = ({
     <div
       className={cn(
         'relative w-full bg-white-blue 2xl:p-[30px] p-[25px] rounded-[10px]',
+        'h-full',
       )}
     >
       <div className={cn('grid grid-cols-[1fr_1fr]')}>

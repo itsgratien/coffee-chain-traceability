@@ -2,6 +2,8 @@
 import React from 'react';
 import cn from 'classnames';
 import { StatisticItem } from './StatisticItem';
+import { TotalRevenues } from './TotalRevenues';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 const items = [
   {
@@ -35,10 +37,47 @@ const items = [
 ];
 export const Statistic = () => {
   return (
-    <div className={cn('relative grid grid-cols-4 gap-[20px]')}>
-      {items.map((item) => (
-        <StatisticItem {...item} imgSrc={item.src} key={item.key} />
-      ))}
+    <div className={cn('relative grid grid-cols-[368px_1fr]')}>
+      <div className="relative">
+        <TotalRevenues />
+      </div>
+      <div className="relative ml-[20px] overflow-auto">
+        <div className="relative 2xl:block hidden">
+          <Swiper
+            spaceBetween={20}
+            slidesPerView={'auto'}
+            navigation
+            centeredSlides={false}
+          >
+            {items.map((item) => (
+              <SwiperSlide
+                key={item.key}
+                style={{ width: '35%', height: '180px' }}
+              >
+                <StatisticItem {...item} imgSrc={item.src} key={item.key} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+        <div className="2xl:hidden block">
+          <Swiper
+            spaceBetween={20}
+            slidesPerView={2}
+            navigation
+            centeredSlides={false}
+            slidesOffsetAfter={50}
+          >
+            {items.map((item) => (
+              <SwiperSlide
+                key={item.key}
+                style={{ width: '45%', height: '180px' }}
+              >
+                <StatisticItem {...item} imgSrc={item.src} key={item.key} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </div>
     </div>
   );
 };

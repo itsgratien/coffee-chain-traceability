@@ -14,12 +14,12 @@ export const Layout = ({ children }: Props) => {
   return (
     <>
       <header
-        className={cn('fixed top-0 left-0 right-0 w-full z-50', 'px-[80px]')}
+        className={cn('fixed top-0 left-0 right-0 w-full z-60', 'px-[80px]')}
       >
         <div className={cn('relative flex items-center w-full')}>
           <Logo />
           <div className={cn('ml-[205px] grid grid-cols-[1fr_1fr] w-[95%]')}>
-            <div>
+            <div className="relative bg-white">
               <h1 className="text-[#2B3674] text-[30px] font-bold">
                 Main Dashboard
               </h1>

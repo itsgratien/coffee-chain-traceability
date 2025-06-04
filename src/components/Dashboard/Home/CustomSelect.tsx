@@ -7,15 +7,23 @@ import cn from 'classnames';
 type Props = {
   options: SelectProps['options'];
   value?: string;
+  placeholder?: string;
+  size?: SelectProps['size'];
 };
 
-export const CustomSelect = ({ options, value }: Props) => {
+export const CustomSelect = ({
+  options,
+  value,
+  placeholder,
+  size = 'large',
+}: Props) => {
   return (
     <Select
       options={options}
       value={value}
-      size="large"
+      size={size}
       className={cn('w-full', styles.customSelect)}
+      placeholder={placeholder}
     />
   );
 };
