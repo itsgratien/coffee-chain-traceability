@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { Modal, InputNumber, Alert } from 'antd';
-import { recordInStock } from './Action';
+import { processCoffee } from './Action';
 import { recordInStockSchema } from './Schema';
 import { useFormik } from 'formik';
 import { InputError } from '@/components/Shared/Error/InputError';
@@ -11,7 +11,7 @@ interface Props {
   onClose: (reload?: boolean) => void;
 }
 
-export const RecordItem = ({ onClose, open }: Props) => {
+export const ProcessCoffee = ({ onClose, open }: Props) => {
   const [success, setSuccess] = React.useState<boolean>();
 
   const [message, setMessage] = React.useState<string>();
@@ -20,7 +20,7 @@ export const RecordItem = ({ onClose, open }: Props) => {
     validationSchema: recordInStockSchema,
     initialValues: { quantity: '' },
     onSubmit: async (values, helpers) => {
-      const send = await recordInStock({
+      const send = await processCoffee({
         quantity: Number(values.quantity),
         unit: 'kg',
       });
@@ -50,7 +50,7 @@ export const RecordItem = ({ onClose, open }: Props) => {
     <Modal
       open={open}
       onCancel={() => onClose(false)}
-      title="New Coffee in Stock"
+      title="Process Coffee"
       okButtonProps={{
         name: 'Submit',
         type: 'primary',
@@ -81,4 +81,4 @@ export const RecordItem = ({ onClose, open }: Props) => {
     </Modal>
   );
 };
-export default RecordItem;
+export default ProcessCoffee;
