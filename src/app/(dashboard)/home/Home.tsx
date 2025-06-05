@@ -8,6 +8,8 @@ import { Spinner } from '@/components/Shared/Spinner';
 import { ProcessCoffee } from './ProcessCoffee';
 const ViewStock = React.lazy(() => import('./ViewStock'));
 const ViewProcessedCoffee = React.lazy(() => import('./ViewProcessedCoffee'));
+const ViewExportedCoffee = React.lazy(() => import('./ViewExportedBatches'));
+import { useContract } from './useContract';
 
 const HomeContext = React.createContext<{
   reloadStock: boolean;
@@ -26,6 +28,8 @@ export const Home = () => {
   const [reloadStock, setReloadStock] = React.useState<boolean>(false);
 
   const [reloadBatch, setReloadBatch] = React.useState<boolean>(false);
+
+  const { getAllBatchIds } = useContract();
 
   const toggleProcessCoffee = React.useCallback(() => {
     setOpenProcessor(!openProcessor);
@@ -63,17 +67,14 @@ export const Home = () => {
             open={openProcessor}
             onClose={(reload) => {
               setOpenProcessor(false);
-
-              if (typeof reload === 'boolean' && reload) {
-                setReloadBatch(reload);
-                setReloadStock(reload);
-              }
+              setReloadBatch(true);
+              setReloadStock(true);
             }}
           />
         )}
         <div
           className={cn(
-            'grid grid-cols-[450px_2px_450px] justify-center',
+            'grid grid-cols-[400px_2px_400px_2px_400px] justify-center',
             'mt-[50px]',
           )}
         >
@@ -86,6 +87,12 @@ export const Home = () => {
           <div className="relative p-[10px]">
             <React.Suspense fallback={<Spinner />}>
               <ViewProcessedCoffee reload={reloadBatch} />
+            </React.Suspense>
+          </div>
+          <div className="bg-[#ddd] w-[1px] h-[200px] mt-[50px]"></div>
+          <div className="p-[20px]">
+            <React.Suspense fallback={<Spinner />}>
+              <ViewExportedCoffee />
             </React.Suspense>
           </div>
         </div>

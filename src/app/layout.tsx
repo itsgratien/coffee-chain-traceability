@@ -5,6 +5,7 @@ import { ReduxStoreProvider } from '@/lib/ReduxStoreProvider';
 import { LayoutManager } from './LayoutManager';
 import { AntdProvider } from '@/lib/AntdProvider';
 import { Poppins } from 'next/font/google';
+import { Wallet } from '@/lib/Wallet';
 
 export const metadata: Metadata = {
   title: 'Coffee Chain Supply',
@@ -25,11 +26,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={poppins.variable}>
-      <ReduxStoreProvider>
-        <AntdProvider>
-          <LayoutManager>{children}</LayoutManager>
-        </AntdProvider>
-      </ReduxStoreProvider>
+      <Wallet>
+        <ReduxStoreProvider>
+          <AntdProvider>
+            <LayoutManager>{children}</LayoutManager>
+          </AntdProvider>
+        </ReduxStoreProvider>
+      </Wallet>
     </html>
   );
 }

@@ -7,6 +7,7 @@ import { ProcessingStatus } from './Constant';
 import { Icon } from '@iconify/react';
 import styles from './Styles.module.scss';
 import cn from 'classnames';
+import { useContract } from './useContract';
 
 interface Props {
   reload?: boolean;
@@ -18,7 +19,11 @@ export const ViewProcessedCoffee = ({ reload }: Props) => {
 
   const [message, setMessage] = React.useState<string>();
 
-  const {} = useHome();
+  const { submitBatch } = useContract();
+
+  const onExport = async (args: ProcessedCoffee) => {
+    await submitBatch(args.batch_number, args.quantity, Date.now());
+  };
 
   React.useEffect(() => {
     startTransition(async () => {
@@ -61,6 +66,7 @@ export const ViewProcessedCoffee = ({ reload }: Props) => {
                     className="mt-[3px]"
                   />
                 }
+                onClick={() => onExport(item)}
               >
                 Export
               </Button>,

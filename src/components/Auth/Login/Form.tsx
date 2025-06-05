@@ -20,7 +20,7 @@ export const LoginForm = () => {
     initialValues: { email: '', password: '' },
     validationSchema: schema,
     onSubmit: () => {
-      router.push('/dashboard');
+      router.push('/home');
     },
   });
 
